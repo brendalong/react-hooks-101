@@ -16,6 +16,7 @@ export default function AnimalList() {
   }, [])
   //Try adding ‘editMode’ as a dependency to the useEffect?
   //Notice the console log flow in the dev tools
+  //useEffect is called each time.
 
   const changeEditMode = () => {
     const newMode = editMode ? false : true;
