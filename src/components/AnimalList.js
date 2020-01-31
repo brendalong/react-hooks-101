@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
 
-const remoteURL = "http://localhost:5000";
-
 export default function AnimalList() {
   const [animals, setAnimals] = useState([]);
   const [editMode, setEditMode] = useState(false);
 
-  //effects happen “after render”
   useEffect(() => {
     console.log("useEffect")
-    fetch(`${remoteURL}/animals`)
-      .then(result => result.json())
+    fetch(
+      'https://raw.githubusercontent.com/brendalong/react-hooks-101/master/src/db/data.json'
+    )
+      .then(res => res.json())
       .then((parsedResult) => {
-        setAnimals(parsedResult)
+        console.log("parsed", parsedResult.animals);
+        setAnimals(parsedResult.animals)
       })
   }, [])
-
 
   const changeEditMode = () => {
     const newMode = editMode ? false : true;
