@@ -7,7 +7,8 @@ function Header(props) {
     { name: 'Fishing Excursion' },
     { name: 'Wildlife Photography' },]);
 
-  const [color, setColor] = useState("red");
+  //setting a string
+  // const [color, setColor] = useState("red");
 
   function handleAddOne() {
     const newObj = { name: "Rafting" };
@@ -21,12 +22,11 @@ function Header(props) {
     setLoaded(updateloaded);
   };
 
-
   return (
     <nav>
       <h2>Exploring the Snake River
          <small> with {props.guideName}</small></h2>
-         {color}
+         {/*{color}*/}
       <ul>
         {activityArray.map((item, index) => (
           <li key={index}>{item.name}</li>
@@ -34,7 +34,7 @@ function Header(props) {
 
       </ul>
       <button onClick={() => { handleAddOne() }} >Add One</button>
-      <div>
+      <div id="exampleForWhenComponentUnMounts">
         {loaded ? <UnloadExample /> :null}
         <button onClick={() => { handleChangeLoaded() }} >{loaded ? "Unload Component" : "Load Component"}</button>
       </div>

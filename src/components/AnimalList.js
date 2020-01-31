@@ -11,10 +11,11 @@ export default function AnimalList() {
     )
       .then(res => res.json())
       .then((parsedResult) => {
-        console.log("parsed", parsedResult.animals);
         setAnimals(parsedResult.animals)
       })
   }, [])
+  //Try adding ‘editMode’ as a dependency to the useEffect?
+  //Notice the console log flow in the dev tools
 
   const changeEditMode = () => {
     const newMode = editMode ? false : true;
@@ -27,11 +28,12 @@ export default function AnimalList() {
       <h2>Animal List</h2>
       {console.log("in the return")}
       {animals.map((animal) => (
-        <h3 key={animal.id}>{animal.name}</h3>
+        <div key={animal.id}>
+          <h3>{animal.name}</h3>
+          <p>Breed: {animal.breed}</p>
+        </div>
       ))}
       <button onClick={() => changeEditMode()}>{(editMode ? "Close Edit Modal" : "Open Edit Modal")}</button>
-
     </>
   )
-
 }
