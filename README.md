@@ -2,7 +2,7 @@
 
 Focused on: `useState` and `useEffect`
 
-[Accompanying slides](https://docs.google.com/presentation/d/16muJbtMaVYdiYDxHd3WB2iLrjIAYOQXSmPZZfPYyQ_k/edit?usp=sharing)
+[Accompanying slides](https://docs.google.com/presentation/d/1iXeHhnsWTiwfhjPt_r7l905pnoCMXXAIm_4AwJGeKLg/edit?usp=sharing)
 
 ### Be sure to open the dev tools when you run the project.
 
